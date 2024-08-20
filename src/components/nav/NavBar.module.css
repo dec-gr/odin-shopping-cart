@@ -1,0 +1,14 @@
+.navBarCont {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 4em;
+}
+
+.navBarCont ul,
+.navBarCont li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

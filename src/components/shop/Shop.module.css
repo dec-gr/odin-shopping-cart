@@ -1,0 +1,6 @@
+.shopCont {
+  background-color: green;
+  display: flex;
+  overflow-x: hidden;
+  height: 100%;
+}

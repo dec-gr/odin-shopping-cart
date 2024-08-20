@@ -1,0 +1,17 @@
+.sidebarCont {
+  background-color: coral;
+  flex-grow: 1;
+  max-width: 20em;
+}
+
+.categoryList {
+}
+
+.categoryList ul {
+  list-style: none;
+}
+.categoryList ul,
+.categoryList li {
+  margin: 0;
+  padding: 0;
+}
