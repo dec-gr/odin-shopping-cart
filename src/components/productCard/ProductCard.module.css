@@ -8,3 +8,9 @@
 .productCardCont img {
   max-height: 10em;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

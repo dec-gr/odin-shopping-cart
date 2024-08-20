@@ -1,15 +1,30 @@
-function updateValueInObjectArray(objectArray, id, fieldName, newValue) {
-  const newObjectArray = objectArray.map((entry) => {
-    if (entry.id === id) {
+import PropTypes from 'prop-types';
+
+function updateValueInBasketArray(basket, productId, newQuantity) {
+  const fieldName = 'quantity';
+  let itemFound = false;
+
+  const newBasketArray = basket.map((entry) => {
+    if (entry.id === productId) {
+      itemFound = true;
       return {
         ...entry,
-        [fieldName]: newValue,
+        [fieldName]: newQuantity,
       };
     } else {
       return entry;
     }
   });
-  return newObjectArray;
+
+  if (!itemFound) {
+    newBasketArray.push({ id: productId, quantity: newQuantity });
+  }
+
+  return newBasketArray;
 }
 
-export { updateValueInObjectArray };
+updateValueInBasketArray.propTypes = {
+  newQuantity: PropTypes.number,
+};
+
+export { updateValueInBasketArray };
