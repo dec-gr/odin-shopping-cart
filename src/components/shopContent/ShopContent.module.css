@@ -1,0 +1,8 @@
+.shopContentCont {
+  background-color: rgb(98, 218, 34);
+  flex-grow: 1;
+  display: flex;
+  overflow-x: hidden;
+  height: 100%;
+  padding: 2em;
+}

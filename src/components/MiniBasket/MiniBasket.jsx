@@ -1,55 +1,65 @@
 import { useEffect, useState } from 'react';
+import FakeComponent from '../FakeComponent';
 
-// function useFetchProductById(productId) {
-//   const [productPrice, setProductPrice] = useState(null);
-//   const [error, setError] = useState(null);
-//   const [loading, setLoading] = useState(true);
+const getProductById = async (product) => {
+  const res = await fetch(`https://fakestoreapi.com/products/${product.id}`);
+  const productDetails = await res.json();
+  productDetails['quantity'] = product.quantity;
+  return productDetails;
+};
 
-//   useEffect(() => {
-//     fetch(`https://fakestoreapi.com/products/${productId}`, { mode: 'cors' })
-//       .then((response) => {
-//         if (response.state >= 400) {
-//           throw new Error('server error');
-//         }
-//         return response.json();
-//       })
-//       .then((response) => setProductPrice(response.price))
-//       .catch((error) => setError(error))
-//       .finally(() => setLoading(false));
-//   }, []);
+const getProductArray = async (basket) => {
+  const productArray = await Promise.all(
+    basket.map((product) => getProductById(product))
+  );
 
-//   return { [productId]: productPrice };
-// }
+  return productArray;
+};
 
-// function useFetchProductPriceMap(basket) {
-//   const priceMap = basket.map((product) => useFetchProductById(product.id));
-//   return { priceMap };
-// }
+function useFetchProductsInBasket(basket) {
+  const [basketProducts, setBasketProducts] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getProductArray(basket)
+      .then((result) => {
+        setBasketProducts(result);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
+  }, [basket]);
+
+  return { basketProducts, error, loading };
+}
 
 const MiniBasket = (props) => {
+  const { basketProducts, error, loading } = useFetchProductsInBasket(
+    props.basket
+  );
+
+  // I couldn't figure out how to only fetch data when basket Id's change.
+  // I'd always have to compute basketIds off basket so it'll get recomputed everytime basket changes anyway
+  // Could store ID's separately in state but then we're duplicating data stored in state
+
   const numberOfItems = props.basket.reduce(
     (acc, item) => acc + item.quantity,
     0
   );
 
-  //   const priceMap = useFetchProductPriceMap(props.basket);
-  //   console.log(priceMap);
+  const totalPrice = basketProducts
+    ? basketProducts.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    : 0;
 
-  //This function is messed up, Needs fixing
-  //We want to fetch a price map (altho only when the set of basketId's change)
-  //Then use the map in a reduce function to calculate total price of the basket
-
-  //   useEffect(() => {
-  //     function fetchItemById(itemId) {
-  //       fetch(`https://fakestoreapi.com/products/${itemId}`)
-  //         .then((res) => res.json())
-  //         .then((res) =>.price);
-  //     }
-
-  //     const prices = basket.map((item) => )
-  //   });
-
-  return <p>Basket: {numberOfItems} items</p>;
+  return (
+    <div className="miniBasketCont">
+      <p>Basket: {numberOfItems} items</p>
+      {loading && <p>Loading</p>}
+      {error && <p>Server Error</p>}
+      <p>Price: {totalPrice.toFixed(2)}</p>
+      <FakeComponent basketProducts={basketProducts}></FakeComponent>
+    </div>
+  );
 };
 
 export default MiniBasket;

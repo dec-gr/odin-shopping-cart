@@ -4,7 +4,7 @@ import styles from './ProductGrid.module.css';
 const ProductGrid = (props) => {
   return (
     <div className={styles.productGridCont}>
-      {props.productData.map((product) => {
+      {props.sortedProductData.map((product) => {
         const basketEntry = props.basket.filter(
           (item) => item.id === product.id
         )[0];

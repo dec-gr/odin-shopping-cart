@@ -1,14 +1,23 @@
 import styles from './Sidebar.module.css';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div className={styles.sidebarCont}>
       <div className={styles.categoryList}>
         <ul>
-          <li>Women's Clothing</li>
+          {/* <li>Women's Clothing</li>
           <li>Men's Clothing</li>
           <li>Jewellery</li>
-          <li>Electronics</li>
+          <li>Electronics</li> */}
+          {props.categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => props.setCategoryId(category.id)}
+              className={category.id === props.categoryId ? styles.active : ''}
+            >
+              {category.value}
+            </button>
+          ))}
         </ul>
       </div>
     </div>
