@@ -1,0 +1,17 @@
+.productPage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.productDetails {
+  display: flex;
+}
+
+.imageHolder {
+  max-width: 15rem;
+}
+
+.imageHolder img {
+  max-width: 100%;
+}

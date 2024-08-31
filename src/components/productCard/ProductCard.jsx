@@ -2,22 +2,22 @@ import styles from './ProductCard.module.css';
 import QuantityInput from '../quantityInput/QuantityInput';
 
 const ProductCard = (props) => {
-  function handleChangeProductQuantity(productId, delta) {
-    props.handleBasketUpdate(productId, delta);
-  }
+  // function handleChangeProductQuantity(productId, delta) {
+  //   props.handleBasketUpdate(productId, delta);
+  // }
 
-  function handleProductAddOne(productId) {
-    handleChangeProductQuantity(productId, 1);
-  }
+  // function handleProductAddOne(productId) {
+  //   handleChangeProductQuantity(productId, 1);
+  // }
 
-  function handleProductMinusOne(productId) {
-    if (props.quantity < 0) return;
-    handleChangeProductQuantity(productId, -1);
-  }
+  // function handleProductMinusOne(productId) {
+  //   if (props.quantity < 0) return;
+  //   handleChangeProductQuantity(productId, -1);
+  // }
 
-  function handleSetProductQuantity(productId, e) {
-    props.handleBasketUpdate(productId, e.target.value, false);
-  }
+  // function handleSetProductQuantity(productId, e) {
+  //   props.handleBasketUpdate(productId, e.target.value, false);
+  // }
 
   return (
     <div className={styles.productCardCont}>
