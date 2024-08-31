@@ -1,4 +1,5 @@
 import styles from './ProductCard.module.css';
+import QuantityInput from '../quantityInput/QuantityInput';
 
 const ProductCard = (props) => {
   function handleChangeProductQuantity(productId, delta) {
@@ -27,7 +28,7 @@ const ProductCard = (props) => {
         <p>{props.product.title}</p>
         <p>£{props.product.price}</p>
         <p>Prod Id: {props.product.id}</p>
-        <div className="quantitySelection">
+        {/* <div className="quantitySelection">
           <button onClick={() => handleProductMinusOne(props.product.id)}>
             -
           </button>
@@ -43,7 +44,12 @@ const ProductCard = (props) => {
           <button onClick={() => handleProductAddOne(props.product.id)}>
             +
           </button>
-        </div>
+        </div> */}
+        <QuantityInput
+          handleBasketUpdate={props.handleBasketUpdate}
+          quantity={props.quantity}
+          productId={props.product.id}
+        ></QuantityInput>
       </div>
     </div>
   );

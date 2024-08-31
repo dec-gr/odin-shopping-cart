@@ -8,6 +8,7 @@ import AppCont from './components/appCont/AppCont';
 import Shop from './components/shop/Shop';
 import NavBar from './components/nav/NavBar';
 import MiniBasket from './components/MiniBasket/MiniBasket';
+import ProductDetails from './components/productDetails/ProductDetails';
 
 // Basket: [{id: 123, quantity: 99}, {id: 456, quantity 2}]
 
@@ -38,6 +39,11 @@ function App() {
         <NavBar>
           <MiniBasket basket={basket}></MiniBasket>
         </NavBar>
+        <ProductDetails
+          productId={1}
+          basket={basket}
+          handleBasketUpdate={handleBasketUpdate}
+        ></ProductDetails>
         <Shop basket={basket} handleBasketUpdate={handleBasketUpdate}></Shop>
       </AppCont>
     </>
