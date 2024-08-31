@@ -29,6 +29,10 @@ function useFetchAllProducts(categoryId) {
   // on click handler since it isn't really a render thing)
   //   const [categoryId, setCategoryId] = useState(0);
 
+  // I don't think this needs an abort because it's just storing the state in this function and return it every time
+  // If we had it inside of the react component then it would need an abort to stop a slower call updating the state
+  // But that's not what we're doing.
+  // https://blog.logrocket.com/modern-api-data-fetching-methods-react/
   useEffect(() => {
     fetch(baseUrl + categories.find((x) => x.id === categoryId).url, {
       mode: 'cors',
