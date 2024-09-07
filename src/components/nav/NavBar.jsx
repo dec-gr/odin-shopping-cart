@@ -10,7 +10,9 @@ const NavBar = (props) => {
       <li>
         <Link to="shop">Shop</Link>
       </li>
-      <li>Basket</li>
+      <li>
+        <Link to="basket">Basket</Link>
+      </li>
       <li>{props.children}</li>
     </div>
   );

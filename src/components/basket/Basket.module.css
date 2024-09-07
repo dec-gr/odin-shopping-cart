@@ -1,0 +1,22 @@
+.basketItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.basketItemCont {
+  border: solid red 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.basketItemCont img {
+  max-height: 10em;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+}
