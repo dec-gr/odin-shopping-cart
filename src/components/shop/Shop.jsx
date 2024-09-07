@@ -4,6 +4,7 @@ import ShopContent from '../shopContent/ShopContent';
 import ProductCard from '../productCard/ProductCard';
 import MiniBasket from '../MiniBasket/MiniBasket';
 import { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 // {id: 'productID', quantity: 'Quantity'}
 
@@ -53,7 +54,7 @@ function useFetchAllProducts(categoryId) {
   return { productData, error, loading };
 }
 
-const Shop = (props) => {
+const Shop = () => {
   //   function handleAddProductToBasket (id) => {
 
   //     if (id) in
@@ -70,6 +71,8 @@ const Shop = (props) => {
 
   const { productData, error, loading } = useFetchAllProducts(categoryId);
 
+  const [basket, handleBasketUpdate] = useOutletContext();
+
   return (
     <div className={styles.shopCont}>
       <Sidebar
@@ -82,8 +85,8 @@ const Shop = (props) => {
       {productData && (
         <ShopContent
           productData={productData}
-          basket={props.basket}
-          handleBasketUpdate={props.handleBasketUpdate}
+          basket={basket}
+          handleBasketUpdate={handleBasketUpdate}
         ></ShopContent>
       )}
     </div>

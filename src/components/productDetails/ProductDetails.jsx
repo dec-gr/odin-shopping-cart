@@ -1,6 +1,7 @@
 import QuantityInput from '../quantityInput/QuantityInput';
 import { useState, useEffect } from 'react';
 import styles from './ProductDetails.module.css';
+import { useOutletContext, useParams } from 'react-router-dom';
 
 function useFetchProductDetails(productId) {
   const [productDetails, setProductDetails] = useState(null);
@@ -23,14 +24,14 @@ function useFetchProductDetails(productId) {
   return { productDetails, error, loading };
 }
 
-const ProductDetails = (props) => {
-  const { productDetails, error, loading } = useFetchProductDetails(
-    props.productId
-  );
+const ProductDetails = () => {
+  const [basket, handleBasketUpdate] = useOutletContext();
+  const { productIdStr } = useParams();
+  const productId = Number(productIdStr);
 
-  const basketEntry = props.basket.filter(
-    (item) => item.id === props.productId
-  )[0];
+  const { productDetails, error, loading } = useFetchProductDetails(productId);
+
+  const basketEntry = basket.filter((item) => item.id === productId)[0];
 
   const productQuantity = basketEntry ? basketEntry.quantity : 0;
 
@@ -50,9 +51,9 @@ const ProductDetails = (props) => {
             <h3>{productDetails.rating.rate} Stars</h3>
             <p>{productDetails.description}</p>
             <QuantityInput
-              handleBasketUpdate={props.handleBasketUpdate}
+              handleBasketUpdate={handleBasketUpdate}
               quantity={productQuantity}
-              productId={props.productId}
+              productId={productId}
             ></QuantityInput>
           </div>
         </div>

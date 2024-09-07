@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import { updateValueInBasketArray } from './utils';
 
+import { Outlet } from 'react-router-dom';
+
 import AppCont from './components/appCont/AppCont';
 import Shop from './components/shop/Shop';
 import NavBar from './components/nav/NavBar';
@@ -39,12 +41,13 @@ function App() {
         <NavBar>
           <MiniBasket basket={basket}></MiniBasket>
         </NavBar>
-        <ProductDetails
+        <Outlet context={[basket, handleBasketUpdate]} />
+        {/* <ProductDetails
           productId={1}
           basket={basket}
           handleBasketUpdate={handleBasketUpdate}
-        ></ProductDetails>
-        <Shop basket={basket} handleBasketUpdate={handleBasketUpdate}></Shop>
+        ></ProductDetails> */}
+        {/* <Shop basket={basket} handleBasketUpdate={handleBasketUpdate}></Shop> */}
       </AppCont>
     </>
   );
