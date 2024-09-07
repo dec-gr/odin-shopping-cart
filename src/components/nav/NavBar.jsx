@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const NavBar = (props) => {
   return (
     <div className={styles.navBarCont}>
-      <li>Home</li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
       <li>
         <Link to="shop">Shop</Link>
       </li>
