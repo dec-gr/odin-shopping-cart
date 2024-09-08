@@ -35,13 +35,17 @@ function App() {
     }
   }
 
+  function clearBasket() {
+    setBasket([]);
+  }
+
   return (
     <>
       <AppCont>
         <NavBar>
           <MiniBasket basket={basket}></MiniBasket>
         </NavBar>
-        <Outlet context={[basket, handleBasketUpdate]} />
+        <Outlet context={[basket, handleBasketUpdate, clearBasket]} />
         {/* <ProductDetails
           productId={1}
           basket={basket}

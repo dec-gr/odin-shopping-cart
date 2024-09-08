@@ -19,7 +19,9 @@ import QuantityInput from '../quantityInput/QuantityInput';
 //             ></QuantityInput>
 
 const Basket = () => {
-  const [basket, handleBasketUpdate] = useOutletContext();
+  const [basket, handleBasketUpdate, clearBasket] = useOutletContext();
+
+  const basketEmpty = basket === undefined || basket.length === 0;
 
   const { basketProducts, error, loading } = useFetchProductsInBasket(basket);
   return (
@@ -47,6 +49,8 @@ const Basket = () => {
           })}
         </div>
       )}
+      {!basketEmpty && <button onClick={() => clearBasket()}>Checkout</button>}
+      {basketEmpty && <h2>Basket is Empty!</h2>}
     </div>
   );
 };
