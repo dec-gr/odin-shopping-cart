@@ -1,11 +1,33 @@
-.basketItemList {
+.basketCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5em;
+}
+
+.basketContents {
+  max-width: 50em;
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
+.bagHeader {
+  padding: 1em;
+}
+
+.basketItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.basketCard {
+  background-color: white;
+  max-width: 50em;
+}
+
 .basketItemCont {
-  border: solid red 1px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,4 +41,10 @@
 .itemInfo {
   display: flex;
   flex-direction: column;
+}
+
+.basketSummary {
+  min-width: 30em;
+  background-color: white;
+  height: fit-content;
 }
