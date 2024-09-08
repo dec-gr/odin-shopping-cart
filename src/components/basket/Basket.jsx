@@ -26,29 +26,32 @@ const Basket = () => {
   const { basketProducts, error, loading } = useFetchProductsInBasket(basket);
   return (
     <div className={styles.basketCont}>
-      <h1>Check out</h1>
-      {basketProducts && (
-        <div className={styles.basketItemList}>
-          {basketProducts.map((basketItem) => {
-            return (
-              <div className={styles.basketItemCont} key={basketItem.id}>
-                <div className={styles.basketItemImgCont}>
-                  <img src={basketItem.image} alt="" />
+      <div className="basketContents">
+        {basketProducts && (
+          <div className={styles.basketItemList}>
+            {basketProducts.map((basketItem) => {
+              return (
+                <div className={styles.basketItemCont} key={basketItem.id}>
+                  <div className={styles.basketItemImgCont}>
+                    <img src={basketItem.image} alt="" />
+                  </div>
+                  <div className={styles.itemInfo}>
+                    <h2>{basketItem.title}</h2>
+                    <h2>{basketItem.price}</h2>
+                    <QuantityInput
+                      handleBasketUpdate={handleBasketUpdate}
+                      quantity={basketItem.quantity}
+                      productId={basketItem.id}
+                    ></QuantityInput>
+                  </div>
                 </div>
-                <div className={styles.itemInfo}>
-                  <h2>{basketItem.title}</h2>
-                  <h2>{basketItem.price}</h2>
-                  <QuantityInput
-                    handleBasketUpdate={handleBasketUpdate}
-                    quantity={basketItem.quantity}
-                    productId={basketItem.id}
-                  ></QuantityInput>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
+              );
+            })}
+          </div>
+        )}
+      </div>
+      <div className="basketSummary"></div>
+
       {!basketEmpty && <button onClick={() => clearBasket()}>Checkout</button>}
       {basketEmpty && <h2>Basket is Empty!</h2>}
     </div>
