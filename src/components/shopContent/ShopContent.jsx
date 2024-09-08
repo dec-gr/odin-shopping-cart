@@ -26,11 +26,13 @@ const ShopContent = (props) => {
 
   return (
     <div className={styles.shopContentCont}>
-      <SortBySelector
-        sortOptionId={sortOptionId}
-        setSortOptionId={setSortOptionId}
-        sortByList={sortByList}
-      ></SortBySelector>
+      <div className={styles.selectorCont}>
+        <SortBySelector
+          sortOptionId={sortOptionId}
+          setSortOptionId={setSortOptionId}
+          sortByList={sortByList}
+        ></SortBySelector>
+      </div>
       <ProductGrid
         sortedProductData={sortedProductData}
         basket={props.basket}

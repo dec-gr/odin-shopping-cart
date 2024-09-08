@@ -22,15 +22,17 @@ const ProductCard = (props) => {
 
   return (
     <div className={styles.productCardCont}>
-      <Link to={`/product/${props.product.id}`}>
-        <div className="productImgCont">
+      <Link
+        to={`/product/${props.product.id}`}
+        className={styles.productImgCont}
+      >
+        <div>
           <img src={props.product.image} alt="" />
         </div>
       </Link>
-      <div className="productInfo">
+      <div className={styles.productInfo}>
         <p>{props.product.title}</p>
         <p>£{props.product.price}</p>
-        <p>Prod Id: {props.product.id}</p>
         <QuantityInput
           handleBasketUpdate={props.handleBasketUpdate}
           quantity={props.quantity}

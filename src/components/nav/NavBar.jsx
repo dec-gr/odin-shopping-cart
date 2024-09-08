@@ -5,15 +5,21 @@ const NavBar = (props) => {
   return (
     <div className={styles.navBarCont}>
       <li>
-        <Link to="/">Home</Link>
+        <h2>
+          <Link to="/">Home</Link>
+        </h2>
       </li>
       <li>
-        <Link to="shop">Shop</Link>
+        <h2>
+          <Link to="shop">Shop</Link>
+        </h2>
       </li>
       <li>
-        <Link to="basket">Basket</Link>
+        <h2>
+          {' '}
+          <Link to="basket">{props.children}</Link>
+        </h2>
       </li>
-      <li>{props.children}</li>
     </div>
   );
 };

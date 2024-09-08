@@ -22,10 +22,12 @@ const MiniBasket = (props) => {
 
   return (
     <div className="miniBasketCont">
-      <p>Basket: {numberOfItems} items</p>
+      <p>
+        Basket: {numberOfItems} {numberOfItems === 1 ? 'item' : 'items'}
+      </p>
       {loading && <p>Loading</p>}
       {error && <p>Server Error</p>}
-      <p>Price: {totalPrice.toFixed(2)}</p>
+      <p>Price: £{totalPrice.toFixed(2)}</p>
       <FakeComponent basketProducts={basketProducts}></FakeComponent>
     </div>
   );
