@@ -32,7 +32,7 @@ const Basket = () => {
   console.log(`Total PRice is ${totalPrice}`);
   console.log(basketProducts);
   return (
-    <div className="checkoutCont">
+    <div className={styles.checkoutCont}>
       {!basketEmpty && basketProducts && (
         <div className={styles.basketCont}>
           <div className={styles.basketContents}>
@@ -51,13 +51,16 @@ const Basket = () => {
                       <img src={basketItem.image} alt="" />
                     </div>
                     <div className={styles.itemInfo}>
-                      <h2>{basketItem.title}</h2>
-                      <h2>{basketItem.price}</h2>
-                      <QuantityInput
-                        handleBasketUpdate={handleBasketUpdate}
-                        quantity={basketItem.quantity}
-                        productId={basketItem.id}
-                      ></QuantityInput>
+                      <p className={styles.cardPrice}>£{basketItem.price}</p>
+                      <p className={styles.cardTitle}>{basketItem.title}</p>
+                      <div className={styles.quantityCont}>
+                        <QuantityInput
+                          handleBasketUpdate={handleBasketUpdate}
+                          quantity={basketItem.quantity}
+                          productId={basketItem.id}
+                          className={styles.quantityInput}
+                        ></QuantityInput>
+                      </div>
                     </div>
                   </div>
                 );

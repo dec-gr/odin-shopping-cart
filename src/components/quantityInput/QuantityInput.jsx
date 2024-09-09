@@ -1,4 +1,4 @@
-import styles from '../productCard/ProductCard.module.css';
+import styles from './QuantityInput.module.css';
 
 const QuantityInput = (props) => {
   function handleChangeProductQuantity(productId, delta) {
@@ -19,7 +19,7 @@ const QuantityInput = (props) => {
   }
 
   return (
-    <div className="quantitySelection">
+    <div className={styles.quantitySelection}>
       <button onClick={() => handleProductMinusOne(props.productId)}>-</button>
 
       <input

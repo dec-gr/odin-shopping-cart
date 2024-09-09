@@ -1,8 +1,13 @@
+.checkoutCont {
+  overflow-y: auto;
+}
+
 .basketCont {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 5em;
+  gap: 2em;
 }
 
 .basketContents {
@@ -14,6 +19,7 @@
 
 .bagHeader {
   padding: 1em;
+  font-weight: 700;
 }
 
 .basketItemList {
@@ -25,22 +31,51 @@
 .basketCard {
   background-color: white;
   max-width: 50em;
+  padding: 2em;
+  gap: 1em;
 }
 
 .basketItemCont {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+}
+
+.basketItemImgCont {
+  height: 110px;
+  width: 110px;
+  position: relative;
+  display: flex;
 }
 
 .basketItemCont img {
-  max-height: 10em;
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .itemInfo {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.itemInfo p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.cardPrice {
+  font-weight: 700;
+}
+
+.cardTitle {
+}
+
+.quantityCont {
+  justify-self: flex-end;
 }
 
 .basketSummary {
