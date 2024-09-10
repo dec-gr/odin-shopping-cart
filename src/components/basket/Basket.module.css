@@ -5,7 +5,7 @@
 .basketCont {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   padding: 5em;
   gap: 2em;
 }
@@ -79,7 +79,58 @@
 }
 
 .basketSummary {
-  min-width: 30em;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   height: fit-content;
+  max-width: 270px;
+  flex-grow: 1;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.totalCont {
+  width: 100%;
+  display: flex;
+  border-bottom: solid grey 1px;
+}
+
+.priceCont {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+  border-bottom: solid grey 1px;
+}
+
+.priceEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h4 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.priceEntryValue {
+  font-weight: 100;
+}
+
+.checkOutBtnCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.checkOutBtnCont button {
+  width: 100%;
+  font-size: 12pt;
+  padding: 0.5em;
+  background-color: rgb(21, 145, 21);
+  font-weight: 900;
 }

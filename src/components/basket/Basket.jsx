@@ -68,11 +68,26 @@ const Basket = () => {
             </div>
           </div>
           <div className={styles.basketSummary}>
-            <h3>Total</h3>
-            <h4>£{totalPrice.toFixed(2)}</h4>
-            {!basketEmpty && (
-              <button onClick={() => clearBasket()}>Checkout</button>
-            )}
+            <div className={styles.totalCont}>
+              <h3>TOTAL</h3>
+            </div>
+            <div className={styles.priceCont}>
+              <div className={styles.priceEntry}>
+                <h4>Sub-total</h4>
+                <h4 className={styles.priceEntryValue}>
+                  £{totalPrice.toFixed(2)}
+                </h4>
+              </div>
+              <div className={styles.priceEntry}>
+                <h4>Delivery</h4>
+                <h4 className={styles.priceEntryValue}>Free</h4>
+              </div>
+            </div>
+            <div className={styles.checkOutBtnCont}>
+              {!basketEmpty && (
+                <button onClick={() => clearBasket()}>CHECKOUT</button>
+              )}
+            </div>
           </div>
         </div>
       )}
