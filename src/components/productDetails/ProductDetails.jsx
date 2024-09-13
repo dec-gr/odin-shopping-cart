@@ -54,11 +54,11 @@ const ProductDetails = () => {
           <div className={styles.imageHolder}>
             <img src={productDetails.image} alt="" />
           </div>
-          <div className="infoHolder">
-            <h2>{productDetails.title}</h2>
-            <h2>£{productDetails.price}</h2>
-            <h3>{productDetails.rating.rate} Stars</h3>
-            <p>{productDetails.description}</p>
+          <div className={styles.infoHolder}>
+            <h2 className={styles.title}>{productDetails.title}</h2>
+            <h2 className={styles.price}>£{productDetails.price}</h2>
+            <h3 className={styles.stars}>{productDetails.rating.rate} Stars</h3>
+            <p className={styles.desc}>{productDetails.description}</p>
             <QuantityInput
               handleBasketUpdate={handleBasketUpdate}
               quantity={productQuantity}
