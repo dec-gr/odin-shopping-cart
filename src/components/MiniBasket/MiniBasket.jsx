@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import FakeComponent from '../FakeComponent';
 import { useFetchProductsInBasket } from './fetchBasketUtils';
+import styles from './MiniBasket.module.css';
 
 const MiniBasket = (props) => {
   const { basketProducts, error, loading } = useFetchProductsInBasket(
@@ -21,14 +22,19 @@ const MiniBasket = (props) => {
     : 0;
 
   return (
-    <div className="miniBasketCont">
-      <p>
-        Basket: {numberOfItems} {numberOfItems === 1 ? 'item' : 'items'}
-      </p>
+    <div className={styles.miniBasketCont}>
+      <div className={styles.checkoutDiv}>Checkout</div>
+      <div
+        className={`${styles.prodCount} ${
+          numberOfItems === 0 ? styles.empty : ''
+        }`}
+      >
+        {numberOfItems === 0 ? ' ' : numberOfItems}
+      </div>
+
       {loading && <p>Loading</p>}
       {error && <p>Server Error</p>}
-      <p>Price: £{totalPrice.toFixed(2)}</p>
-      <FakeComponent basketProducts={basketProducts}></FakeComponent>
+      {/* <p>Price: £{totalPrice.toFixed(2)}</p> */}
     </div>
   );
 };

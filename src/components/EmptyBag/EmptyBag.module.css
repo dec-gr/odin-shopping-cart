@@ -1,0 +1,25 @@
+.emptyBagCont {
+  display: flex;
+  justify-content: center;
+  padding: 5em;
+}
+
+.emptyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+  width: fit-content;
+  background-color: white;
+}
+
+.bagIcon {
+  display: flex;
+  font-weight: 100;
+}
+
+.emptyText {
+  display: flex;
+  font-weight: 100;
+}

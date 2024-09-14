@@ -16,7 +16,6 @@ const NavBar = (props) => {
       </li>
       <li>
         <h2>
-          {' '}
           <Link to="basket">{props.children}</Link>
         </h2>
       </li>

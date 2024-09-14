@@ -2,6 +2,7 @@ import styles from './Basket.module.css';
 import { useOutletContext } from 'react-router-dom';
 import { useFetchProductsInBasket } from '../MiniBasket/fetchBasketUtils';
 import QuantityInput from '../quantityInput/QuantityInput';
+import EmptyBag from '../EmptyBag/EmptyBag';
 
 // <div className={styles.productDetails}>
 //           <div className={styles.imageHolder}>
@@ -91,7 +92,7 @@ const Basket = () => {
           </div>
         </div>
       )}
-      {basketEmpty && <h2>Basket is Empty!</h2>}
+      {basketEmpty && <EmptyBag />}
     </div>
   );
 };
