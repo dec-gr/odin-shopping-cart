@@ -5,6 +5,8 @@
   align-items: center;
   height: 5em;
   color: white;
+  position: sticky;
+  top: 0;
 }
 
 .navBarCont ul,
