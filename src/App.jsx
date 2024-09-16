@@ -52,6 +52,9 @@ function App() {
           handleBasketUpdate={handleBasketUpdate}
         ></ProductDetails> */}
         {/* <Shop basket={basket} handleBasketUpdate={handleBasketUpdate}></Shop> */}
+        {/* <NavBar>
+          <MiniBasket basket={basket}></MiniBasket>
+        </NavBar> */}
       </AppCont>
     </>
   );
