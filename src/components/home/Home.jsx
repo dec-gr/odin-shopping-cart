@@ -14,7 +14,7 @@ const Home = () => {
         </button>
       </div>
       <div className={styles.homeRightDiv}>
-        <img src="src/assets/fleeceRack.jpg" alt="" />
+        <img src="/assets/fleeceRack.jpg" alt="" />
       </div>
     </div>
   );
