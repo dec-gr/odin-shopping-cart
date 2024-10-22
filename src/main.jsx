@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import Shop from './components/shop/Shop.jsx';
-import Home from './components/home/home.jsx';
+import Home from './components/home/Home.jsx';
 import ProductDetails from './components/productDetails/ProductDetails.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Basket from './components/basket/Basket.jsx';
