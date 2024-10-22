@@ -11,6 +11,7 @@ import Shop from './components/shop/Shop';
 import NavBar from './components/nav/NavBar';
 import MiniBasket from './components/MiniBasket/MiniBasket';
 import ProductDetails from './components/productDetails/ProductDetails';
+import Footer from './components/Footer/Footer';
 
 // Basket: [{id: 123, quantity: 99}, {id: 456, quantity 2}]
 
@@ -55,6 +56,7 @@ function App() {
         {/* <NavBar>
           <MiniBasket basket={basket}></MiniBasket>
         </NavBar> */}
+        <Footer />
       </AppCont>
     </>
   );

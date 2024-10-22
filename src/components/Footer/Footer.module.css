@@ -1,0 +1,49 @@
+.footerCont {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  align-items: center;
+  padding: 1em;
+}
+
+.siteInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.siteInfo p {
+  padding: 0;
+  margin: 0;
+}
+
+.siteLinksCont {
+  padding: 0.5em;
+}
+
+.siteLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.socialLinksDiv {
+  padding: 0.5em;
+}
+
+.socialLinksList {
+  display: flex;
+  gap: 2em;
+}
+
+.socialLinksDiv img {
+  height: 2.5em;
+}
+
+.footerCont ul,
+.footerCont li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
