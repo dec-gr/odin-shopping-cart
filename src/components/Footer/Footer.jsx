@@ -18,17 +18,17 @@ const Footer = () => {
         <ul className={styles.socialLinksList}>
           <li>
             <a href="https://www.instagram.com">
-              <img src="src/assets/instagram.png" alt="" />
+              <img src="/assets/instagram.png" alt="" />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com">
-              <img src="src/assets/facebook.png" alt="" />
+              <img src="/assets/facebook.png" alt="" />
             </a>
           </li>
           <li>
             <a href="https://www.tiktok.com">
-              <img src="src/assets/tiktok.png" alt="" />
+              <img src="/assets/tiktok.png" alt="" />
             </a>
           </li>
         </ul>
